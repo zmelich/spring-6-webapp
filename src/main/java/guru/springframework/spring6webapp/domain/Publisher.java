@@ -8,6 +8,7 @@ Created by Zsolt Melich (BT - IVR team)
 import jakarta.persistence.*;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -20,9 +21,9 @@ public class Publisher {
     private String address;
     private String city;
     private String state;
-    private String zip;
+    private String zipCode;
 
-
+/*
     @ManyToMany
     @JoinTable(name="publisher_book",joinColumns = @JoinColumn(name="publisher_id"),
             inverseJoinColumns = @JoinColumn(name="book_id"))
@@ -48,7 +49,7 @@ public class Publisher {
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
-
+*/
     public Long getId() {
         return id;
     }
@@ -89,12 +90,12 @@ public class Publisher {
         this.state = state;
     }
 
-    public String getZip() {
-        return zip;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     @Override
@@ -105,9 +106,7 @@ public class Publisher {
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", zip='" + zip + '\'' +
-                ", books=" + books +
-                ", authors=" + authors +
+                ", zip='" + zipCode + '\'' +
                 '}';
     }
 
@@ -115,11 +114,11 @@ public class Publisher {
     public final boolean equals(Object o) {
         if (!(o instanceof Publisher publisher)) return false;
 
-        return getId().equals(publisher.getId());
+        return Objects.equals(getId(), publisher.getId());
     }
 
     @Override
     public int hashCode() {
-        return getId().hashCode();
+        return Objects.hashCode(getId());
     }
 }

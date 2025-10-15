@@ -58,23 +58,25 @@ public class BootStrapData implements CommandLineRunner {
         authorRepository.save(rodSaved);
 
         Publisher libri = new Publisher();
+        libri.setPublisherName("Libri Kiado");
         libri.setAddress("15 Kunigunda road");
         libri.setCity("Budapest");
         libri.setState("Pest");
-        libri.setZip("1141");
+        libri.setZipCode("1141");
 
+        /*
         libri.getBooks().add(noEJBSaved);
         libri.getAuthors().add(rodSaved);
 
         Publisher libriSaved = publisherRepository.save(libri);
+        */
+        publisherRepository.save(libri);
 
         System.out.println("In Bootstrap");
         System.out.println("Author count:"+  authorRepository.count());
         System.out.println("Book count:"+  bookRepository.count());
         System.out.println("Publisher count:"+  publisherRepository.count());
 
-        //Not working
-        //System.out.println("Libri toString(): "+ publisherRepository.findById(libriSaved.getId()).toString());
 
     }
 }

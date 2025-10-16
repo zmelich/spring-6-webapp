@@ -23,33 +23,17 @@ public class Publisher {
     private String state;
     private String zipCode;
 
-/*
-    @ManyToMany
-    @JoinTable(name="publisher_book",joinColumns = @JoinColumn(name="publisher_id"),
-            inverseJoinColumns = @JoinColumn(name="book_id"))
+    //One publisher could have many books
+    @OneToMany(mappedBy = "publisher")
     private Set<Book> books = new HashSet<>();
-
-    @ManyToMany
-    @JoinTable(name="publisher_author",joinColumns = @JoinColumn(name="publisher_id"),
-            inverseJoinColumns = @JoinColumn(name="author_id"))
-    private Set<Author> authors = new HashSet<>();
 
     public Set<Book> getBooks() {
         return books;
     }
 
-    public Set<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(Set<Author> authors) {
-        this.authors = authors;
-    }
-
     public void setBooks(Set<Book> books) {
         this.books = books;
     }
-*/
     public Long getId() {
         return id;
     }

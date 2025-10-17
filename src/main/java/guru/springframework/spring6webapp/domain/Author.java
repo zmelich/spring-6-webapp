@@ -12,7 +12,7 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstNAme;
+    private String firstName;
     private String lastName;
 
     @ManyToMany(mappedBy = "authors")
@@ -34,12 +34,12 @@ public class Author {
         this.id = id;
     }
 
-    public String getFirstNAme() {
-        return firstNAme;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstNAme(String firstNAme) {
-        this.firstNAme = firstNAme;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -54,7 +54,7 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", firstNAme='" + firstNAme + '\'' +
+                ", firstNAme='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", books=" + books +
                 '}';

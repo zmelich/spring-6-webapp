@@ -30,7 +30,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Author eric = new Author();
-        eric.setFirstNAme("Eric");
+        eric.setFirstName("Eric");
         eric.setLastName("Evans");
 
         Book ddd = new Book();
@@ -41,7 +41,7 @@ public class BootStrapData implements CommandLineRunner {
         Book dddSaved = bookRepository.save(ddd);
 
         Author rod = new Author();
-        rod.setFirstNAme("Rod");
+        rod.setFirstName("Rod");
         rod.setLastName("Johnson");
 
         Book noEJB = new Book();
